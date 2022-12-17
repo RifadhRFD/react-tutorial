@@ -10,7 +10,7 @@ function App() {
       <header className="App-header">
         {showEmployee ?  
         <>
-          <Employee />
+          <Employee name="Rifadh"/>
           <Employee />
           <Employee />
         </>

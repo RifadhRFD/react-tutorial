@@ -1,4 +1,4 @@
-function Employee() {
-	return <h3>My Name is : Rifadh</h3>
+function Employee(props) {
+	return <h3>My Name is {props.name} </h3>
 }
 export default Employee;
