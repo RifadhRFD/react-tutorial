@@ -10,39 +10,48 @@ function App() {
   const [employees, setEmployees] = useState(
     [
       {
+        id:1,
         name: 'Rifadh',
         role: 'Software'
       },
       {
+        id:2,
         name: 'Bobby',
         role: 'Developer'
       },
       {
+        id:3,
         name: 'Cane',
         role: 'Software'
       },
       {
+        id:4,
         name: 'Steve',
         role: 'Developer'
       },
       {
+        id:5,
         name: 'Marvel',
         role: 'Software'
       },
       {
+        id:6,
         name: 'Captain',
-        role: 'Developer'
-      },
-      {
-        name: 'Robert',
-        role: 'Software'
-      },
-      {
-        name: 'Lilly',
         role: 'Developer'
       }
     ]
   )
+
+    function updateEmployee(id, newName, newRole){
+      const updatedEmployee = employees.map((employee) => {
+        if (id === employee.id){
+          return {...employee, name: newName, role:newRole}
+        }
+
+        return employee;
+      })
+      setEmployees(updatedEmployee)
+    }
 
   return (
     <div className="App">
@@ -59,7 +68,12 @@ function App() {
           {employees.map((employee) => {
             console.log(employee);
             return(
-            <Employee key={uuidv4()} name={employee.name} role={employee.role} />
+            <Employee 
+            key={employee.id} 
+            id={employee.id}
+            name={employee.name} 
+            role={employee.role}
+            updateEmployee={updateEmployee} />
             );
           })}
         </div>
