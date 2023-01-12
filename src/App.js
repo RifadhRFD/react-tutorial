@@ -2,6 +2,7 @@ import './index.css';
 import Employee from './component/Employee'
 import { useState } from 'react'
 import {v4 as uuidv4} from 'uuid'
+import AddEmployee from './component/AddEmployee';
 
 function App() {
 
@@ -77,6 +78,7 @@ function App() {
             );
           })}
         </div>
+        <AddEmployee />
         </>
         ):(
           <p>You cannot see me.</p>
