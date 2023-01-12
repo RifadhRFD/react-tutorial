@@ -54,6 +54,15 @@ function App() {
       setEmployees(updatedEmployee)
     }
 
+    function NewEmployee(name, role) {
+      newEmployee = {
+        id: uuidv4(),
+        name: name,
+        role: role
+      };
+      setEmployees([...employees, newEmployee]);
+    }
+
   return (
     <div className="App">
         {showEmployee ?  (
@@ -78,7 +87,7 @@ function App() {
             );
           })}
         </div>
-        <AddEmployee />
+        <AddEmployee newEmployee={newEmployee} />
         </>
         ):(
           <p>You cannot see me.</p>

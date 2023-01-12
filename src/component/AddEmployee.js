@@ -29,9 +29,8 @@ function AddEmployee(props) {
         <Modal.Body>
         <form 
             onSubmit={(e) => {
-            handleClose()
             e.preventDefault()
-            props.updateEmployee(props.id, name, role)
+            props.newEmployee(name, role)
         }} 
         id="editmodal" className="w-full max-w-sm">
             {/* Full Name */}
@@ -70,7 +69,9 @@ function AddEmployee(props) {
           <button className="bg-slate-400 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded" onClick={handleClose}>
             Close
           </button>
-          <button form="editmodal" className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" >
+          <button form="editmodal" 
+          onClick={handleClose()}
+          className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" >
             Add
           </button>
         </Modal.Footer>
